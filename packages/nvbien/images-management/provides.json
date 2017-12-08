@@ -1,0 +1,11 @@
+{
+  "providers": [
+    "Nvbien\\ImagesManagement\\ImageManagementServiceProvider"
+  ],
+  "aliases": [
+    {
+      "alias": "ImageManagement",
+      "facade": "Nvbien\\ImagesManagement\\Facades\\ImagesManagement"
+    }
+  ]
+}

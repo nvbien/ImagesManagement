@@ -1,6 +1,5 @@
 <?php
 
-use \Intervention\Image\Facades\Image;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,24 +34,7 @@ Route::post('/', function () {
     dd(json_decode($response->getBody()));
 });
 Route::post('/curl', function () {
-    $response ='';
-    foreach ($_FILES as $k =>  $file){
-        if($file['tmp_name']){
-            if (function_exists('curl_file_create')) { // php 5.5+
-            $cFile = curl_file_create($file['tmp_name']);
-        } else { //
-            $cFile = '@' . realpath($file['tmp_name']);
-        }
-            $post = array('extra_info' => '123456','file_contents'=> $cFile);
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL,'http://im.local/api/file');
-            curl_setopt($ch, CURLOPT_POST,1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-            $response= curl_exec ($ch);
-            curl_close ($ch);
-        }
-    }
-    dd(json_decode($response));
+    dd(ImagesManagement::uploadImages());
 });
 Route::get('/files/{id}/{w?}/{h?}', function (\Symfony\Component\HttpFoundation\Request $request, $id , $w ='', $h ='') {
         $file = \App\File::find($id);

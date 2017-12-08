@@ -1,0 +1,19 @@
+{
+    "name": "nvbien/images_management",
+    "description": "Which is support you to management your images, resize and makeup them",
+    "authors": [
+        {
+            "name": "nvbien",
+            "email": "ngvbien@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nvbien\\ImagesManagement\\": "src/"
+        }
+    },
+    "minimum-stability": "RC"
+}

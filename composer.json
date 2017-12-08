@@ -23,7 +23,8 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Nvbien\\ImagesManagement\\": "packages/nvbien/images-management/src/"
         }
     },
     "autoload-dev": {
