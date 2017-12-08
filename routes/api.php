@@ -26,6 +26,7 @@ Route::post('/file', function (Request $request) {
             $file->path = env('APP_URL').'files/'.$path;
             $file->server_path = $path;
             $file->save();
+            $file->url = route('files', $file->id);
             array_push($arr, $file);
         }
     }

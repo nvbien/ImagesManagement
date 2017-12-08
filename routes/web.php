@@ -54,4 +54,4 @@ Route::get('/files/{id}/{w?}/{h?}', function (\Symfony\Component\HttpFoundation\
             'success' => false,
             'message' => 'File not found!',
         ]);
-});
+})->name('files');
